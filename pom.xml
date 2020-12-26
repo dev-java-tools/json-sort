@@ -6,10 +6,29 @@
 
     <groupId>dev.javatools</groupId>
     <artifactId>json-sort</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.1.0</version>
 
     <packaging>jar</packaging>
-
+    <description>This Java library contains the API to format and sort the Java maps and JSON fields. Will keep your data local when performing these operations.</description>
+    <licenses>
+        <license>
+            <name>The 2.0 version of the Apache License</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Chalapathi Chitturi</name>
+            <email>chala@javatools.dev</email>
+            <organizationUrl>www.javatools.dev</organizationUrl>
+            <organization>devjavatools</organization>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git://github.com/dev-java-tools/json-sort.git</connection>
+        <developerConnection>scm:git:git@github.com:dev-java-tools/json-sort.git</developerConnection>
+        <url>https://github.com/dev-java-tools/json-sort/tree/master</url>
+    </scm>
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
