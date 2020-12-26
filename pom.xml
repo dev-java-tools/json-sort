@@ -4,17 +4,30 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>dev.javatools.json.sort.javatools</groupId>
-    <artifactId>json-sort</artifactId>
+    <groupId>dev.javatools</groupId>
+    <artifactId>json-sortJson</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <com.fasterxml.jackson.core.version>2.12.0</com.fasterxml.jackson.core.version>
-        <junit.version>4.13.1</junit.version>
-        <org.slf4j.api.version>1.7.30</org.slf4j.api.version>
+        <com.fasterxml.jackson.core.version>[2.12.0,)</com.fasterxml.jackson.core.version>
+        <junit.version>[4.13.1,)</junit.version>
+        <org.slf4j.api.version>[1.7.30,)</org.slf4j.api.version>
     </properties>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+    </distributionManagement>
 
     <dependencies>
 
@@ -50,4 +63,15 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.2.0</version>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>

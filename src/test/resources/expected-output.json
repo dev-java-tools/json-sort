@@ -1,0 +1,28 @@
+{
+  "address" : {
+    "city" : "Cupertino",
+    "number" : 1,
+    "state" : {
+      "code" : "CA",
+      "name" : "California"
+    },
+    "street" : "Infinity Loop"
+  },
+  "children" : [ "Andy", "Charlie", "Eric", "Sandy", "Victor" ],
+  "innerList" : [ {
+    "name" : "BA Cities",
+    "nestedList" : [ "Cupertino", "Mountain View", "Palo Alto", "San Jose", "Sunnyvale" ]
+  }, {
+    "name" : "CA Cities",
+    "nestedList" : [ "Fresna", "Los Angeles", "Redding", "Sandiago", "Tustin" ]
+  } ],
+  "list" : [ {
+    "listKey" : "Andrew",
+    "listValue" : "Smith"
+  }, {
+    "listKey" : "John",
+    "listValue" : "Gardner"
+  } ],
+  "name1" : "javatools",
+  "name9" : "dev"
+}
