@@ -19,9 +19,10 @@ public class CreateMap {
     /**
      * Convert json string that is in the file into a Map.
      *
-     * @param input
-     * @return
-     * @throws IOException
+     * @param input, file containing the json String.
+     * @return returns Map representation of the File content
+     * @throws IOException Throws IOException, if the provided Json is not valid or if the
+     * file does not exists.
      */
     public Map<String, Object> create(File input) throws IOException {
         Path tempFilePath = Path.of(input.getAbsolutePath());
@@ -32,9 +33,9 @@ public class CreateMap {
     /**
      * Create a Map from json String
      *
-     * @param input
-     * @return
-     * @throws JsonProcessingException
+     * @param input Json String
+     * @return returns Map representation of the File content
+     * @throws JsonProcessingException Throws JsonProcessingException, if the provided Json is not valid
      */
     public Map<String, Object> create(String input) throws JsonProcessingException {
         Map<String, Object> mapInput = objectMapper.readValue(input, Map.class);
@@ -44,9 +45,9 @@ public class CreateMap {
     /**
      * Convert any custom object into a Map.
      *
-     * @param input
-     * @return
-     * @throws JsonProcessingException
+     * @param input And custome model object that you want to convert to Map
+     * @return returns Map representation of the File content
+     * @throws JsonProcessingException Throws JsonProcessingException, if the provided Object is not valid model
      */
     public Map<String, Object> create(Object input) throws JsonProcessingException {
         String jsonString = objectMapper.writeValueAsString(input);

@@ -12,6 +12,7 @@
     <name>json-sort</name>
     <description>This Java library contains the API to format and sort the Java maps and JSON fields. Will keep your data local when performing these operations.</description>
     <url>https://www.javatools.dev</url>
+    <inceptionYear>2020</inceptionYear>
     <licenses>
         <license>
             <name>The 2.0 version of the Apache License</name>
@@ -39,6 +40,10 @@
         <org.slf4j.api.version>[1.7.30,)</org.slf4j.api.version>
     </properties>
 
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com/dev-java-tools/json-sort/issues</url>
+    </issueManagement>
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
@@ -89,10 +94,46 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
+
 
 </project>

@@ -6,6 +6,32 @@ import org.slf4j.LoggerFactory;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * This class has all the apis needs to sort a Map.
+ *
+ * How to use listKeys?
+ *  If the Map has a list of objects and if you need to sort the list based on a
+ *  field of an object, this feature will help.
+ *
+ *  Here is how it works.
+ *      Take the below Map as an example
+ *          {
+ *              "members": [
+ *                  {
+ *                      "name": "John"
+ *                      "age": 22
+ *                  }
+ *                  {
+ *                      "name": "Bob"
+ *                      "age": 18
+ *                  }
+ *              ]
+ *          }
+ *      If you need the sort the above Map based on the member name. You need to pass
+ *          listKey.put("members[]", "name");
+ *     If you need the sort the above Map based on the member age. You need to pass
+ *          listKey.put("members[]", "age");
+ */
 public class SortMap {
 
     private static final String EMPTY_STRING = "";
@@ -14,29 +40,35 @@ public class SortMap {
 
     private Logger logger = LoggerFactory.getLogger(SortMap.class);
 
+
     /**
-     * @param input
-     * @return
+     *
+     * Creates a new map that has all the fields from the input, sorts them and respond the newly created Map.
+     *
+     * @param input Map that needs to be sorted
+     * @return Map that is sorted on the keys
      */
     public Map<String, Object> getSortedMap(final Map<String, Object> input) {
         Map<String, String> listKeys = new HashMap<>();
         return getSortedMap(input, listKeys);
     }
 
+
     /**
-     * @param input
-     * @param listKeys
-     * @return
+     *
+     * @param input Map that needs to be sorted
+     * @param listKeys List of field names that needs to be sorted, see the class documentation for more details
+     * @return Map that is sorted on the keys
      */
     public Map<String, Object> getSortedMap(final Map<String, Object> input, final Map<String, String> listKeys) {
         return getSortedMap(input, listKeys, null);
     }
 
     /**
-     * @param input
-     * @param listKeys
+     * @param input Map that needs to be sorted
+     * @param listKeys List of field names that needs to be sorted, see the class documentation for more details
      * @param prefix
-     * @return
+     * @return Map that is sorted on the keys
      */
     private Map<String, Object> getSortedMap(final Map<String, Object> input, final Map<String, String> listKeys, final String prefix) {
         TreeMap<String, Object> treeMap = new TreeMap();
@@ -131,6 +163,5 @@ public class SortMap {
         } else {
             return response.stream().collect(Collectors.toList());
         }
-
     }
 }
